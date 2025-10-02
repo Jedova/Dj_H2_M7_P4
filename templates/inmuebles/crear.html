@@ -1,0 +1,8 @@
+<!doctype html><html><body>
+  <h1>Nuevo inmueble</h1>
+  <form method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Guardar</button>
+    <a href="{% url 'inmuebles:listar_propios' %}">Cancelar</a>
+  </form>
+</body></html>

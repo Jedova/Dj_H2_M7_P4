@@ -1,0 +1,14 @@
+<!doctype html><html><body>
+  <h1>Oferta disponible</h1>
+  <ul>
+    {% for i in inmuebles %}
+      <li>
+        <strong>{{ i.direccion }}</strong> — {{ i.comuna }} — {{ i.tipo }} — ${{ i.precio_mensual }}
+        <br><em>{{ i.descripcion }}</em>
+      </li>
+    {% empty %}
+      <li>No hay inmuebles disponibles.</li>
+    {% endfor %}
+  </ul>
+  <p><a href="/">Inicio</a></p>
+</body></html>

@@ -1,0 +1,8 @@
+<!doctype html><html><body>
+  <h1>Eliminar inmueble</h1>
+  <p>¿Seguro que deseas eliminar <strong>{{ inmueble.direccion }}</strong>?</p>
+  <form method="post">{% csrf_token %}
+    <button type="submit">Sí, eliminar</button>
+    <a href="{% url 'inmuebles:listar_propios' %}">Cancelar</a>
+  </form>
+</body></html>

@@ -18,7 +18,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.shortcuts import render
-from inmuebles.views import solo_lectura_inmuebles
+
 
 def home(request):
     return render(request, "home.html")
@@ -26,11 +26,7 @@ def home(request):
 urlpatterns = [
     path("", home, name="home"),
     path("admin/", admin.site.urls),
-
     path("accounts/", include("django.contrib.auth.urls")),
-
     path("accounts/", include(("accounts.urls", "accounts"), namespace="accounts")),
-
-    path("inmuebles/solo-lectura/", solo_lectura_inmuebles, name="inmuebles_solo_lectura"),
+    path("inmuebles/", include(("inmuebles.urls", "inmuebles"), namespace="inmuebles")),
 ]
-

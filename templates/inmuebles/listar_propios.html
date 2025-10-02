@@ -1,0 +1,16 @@
+<!doctype html><html><body>
+  <h1>Mis inmuebles</h1>
+  <p><a href="{% url 'inmuebles:crear' %}">+ Nuevo</a></p>
+  <ul>
+    {% for i in inmuebles %}
+      <li>
+        <strong>{{ i.direccion }}</strong> — {{ i.comuna }} — {{ i.tipo }} — ${{ i.precio_mensual }}
+        [<a href="{% url 'inmuebles:editar' i.pk %}">Editar</a>]
+        [<a href="{% url 'inmuebles:eliminar' i.pk %}">Eliminar</a>]
+      </li>
+    {% empty %}
+      <li>No tienes inmuebles cargados.</li>
+    {% endfor %}
+  </ul>
+  <p><a href="/">Inicio</a></p>
+</body></html>
