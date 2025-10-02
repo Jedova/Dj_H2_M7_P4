@@ -1,0 +1,9 @@
+[
+  { "model": "inmuebles.region", "pk": 1, "fields": { "nombre": "Arica y Parinacota" } },
+  { "model": "inmuebles.region", "pk": 2, "fields": { "nombre": "Tarapacá" } },
+
+  { "model": "inmuebles.comuna", "pk": 1, "fields": { "nombre": "Arica", "region": 1 } },
+  { "model": "inmuebles.comuna", "pk": 2, "fields": { "nombre": "Camarones", "region": 1 } },
+  { "model": "inmuebles.comuna", "pk": 3, "fields": { "nombre": "Iquique", "region": 2 } },
+  { "model": "inmuebles.comuna", "pk": 4, "fields": { "nombre": "Alto Hospicio", "region": 2 } }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "model": "inmuebles.inmueble",
+    "pk": 1001,
+    "fields": {
+      "direccion": "Av. Centro 123",
+      "comuna": 3,
+      "tipo": 1,
+      "descripcion": "Depto 2D/1B cercano a metro",
+      "precio_mensual": "550000.00",
+      "disponible": true
+    }
+  },
+  {
+    "model": "inmuebles.inmueble",
+    "pk": 1002,
+    "fields": {
+      "direccion": "Calle Norte 456",
+      "comuna": 1,
+      "tipo": 2,
+      "descripcion": "Casa con patio",
+      "precio_mensual": "800000.00",
+      "disponible": true
+    }
+  },
+  {
+    "model": "inmuebles.inmueble",
+    "pk": 1003,
+    "fields": {
+      "direccion": "Oficina Plaza 789",
+      "comuna": 4,
+      "tipo": 3,
+      "descripcion": "Oficina en pleno centro",
+      "precio_mensual": "650000.00",
+      "disponible": true
+    }
+  }
+]

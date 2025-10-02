@@ -1,0 +1,11 @@
+== Reporte de Inmuebles Disponibles ==
+
+[ALTO HOSPICIO]
+ - Oficina en pleno centro
+
+[ARICA]
+ - Casa con patio
+
+[IQUIQUE]
+ - Depto 2D/1B cercano a metro
+

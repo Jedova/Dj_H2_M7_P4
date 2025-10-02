@@ -1,0 +1,9 @@
+== Reporte de Inmuebles Disponibles ==
+
+[ARICA Y PARINACOTA]
+ - Casa con patio
+
+[TARAPACÁ]
+ - Depto 2D/1B cercano a metro
+ - Oficina en pleno centro
+

@@ -1,0 +1,5 @@
+[
+  { "model": "inmuebles.tipoinmueble", "pk": 1, "fields": { "nombre": "Departamento" } },
+  { "model": "inmuebles.tipoinmueble", "pk": 2, "fields": { "nombre": "Casa" } },
+  { "model": "inmuebles.tipoinmueble", "pk": 3, "fields": { "nombre": "Oficina" } }
+]
