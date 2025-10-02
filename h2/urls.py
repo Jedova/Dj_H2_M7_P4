@@ -16,8 +16,20 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from django.http import HttpResponse
+from inmuebles.views import solo_lectura_inmuebles  # <-- importa la vista protegida
+
+def home(request):
+    return HttpResponse("<h1>Bienvenido</h1><p><a href='/admin/'>Admin</a> | <a href='/accounts/logout/'>Cerrar sesión</a></p>")
 
 urlpatterns = [
+    path("", home, name="home"),
     path("admin/", admin.site.urls),
+
+    path("accounts/", include("django.contrib.auth.urls")),
+
+    path("accounts/", include("accounts.urls")),
+
+    path("inmuebles/solo-lectura/", solo_lectura_inmuebles, name="inmuebles_solo_lectura"),
 ]

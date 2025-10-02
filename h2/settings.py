@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "inmuebles",
+    "accounts",
 ]
 
 MIDDLEWARE = [
@@ -64,17 +65,20 @@ ROOT_URLCONF = "h2.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [ BASE_DIR / "templates" ],  # <-- importante
         "APP_DIRS": True,
-        "OPTIONS": {
-            "context_processors": [
-                "django.template.context_processors.request",
-                "django.contrib.auth.context_processors.auth",
-                "django.contrib.messages.context_processors.messages",
-            ],
-        },
+        "OPTIONS": { "context_processors": [
+            "django.template.context_processors.request",
+            "django.contrib.auth.context_processors.auth",
+            "django.contrib.messages.context_processors.messages",
+        ]},
     },
 ]
+
+
+LOGIN_URL = "login"
+LOGIN_REDIRECT_URL = "home"  
+LOGOUT_REDIRECT_URL = "login"
 
 WSGI_APPLICATION = "h2.wsgi.application"
 
