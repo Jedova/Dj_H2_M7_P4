@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <body>
+    <h1>Bienvenido</h1>
+
+    {% if user.is_authenticated %}
+      <p>
+        Hola, {{ user.get_username }} |
+        <a href="{% url 'accounts:profile' %}">Mi perfil</a>
+      </p>
+
+      <form action="{% url 'logout' %}" method="post" style="display:inline">
+        {% csrf_token %}
+        <button type="submit">Cerrar sesión</button>
+      </form>
+    {% else %}
+      <p>
+        <a href="{% url 'login' %}">Iniciar sesión</a> |
+        <a href="{% url 'accounts:register' %}">Registrarse</a>
+      </p>
+    {% endif %}
+  </body>
+</html>

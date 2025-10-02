@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+  <body>
+    <h1>Mi perfil</h1>
+    <p><strong>Rol:</strong> {{ role }}</p>
+
+    <h3>Datos de la cuenta</h3>
+    <ul>
+      <li>Usuario: {{ user.username }}</li>
+      <li>Nombre: {{ user.first_name }}</li>
+      <li>Apellido: {{ user.last_name }}</li>
+      <li>Email: {{ user.email }}</li>
+      <li>Grupos:
+        {% for g in user.groups.all %}{{ g.name }}{% if not forloop.last %}, {% endif %}
+        {% empty %}—{% endfor %}
+      </li>
+    </ul>
+
+    <p>
+      <a href="{% url 'accounts:profile_edit' %}">Editar mis datos</a> |
+      <a href="/">Inicio</a>
+    </p>
+  </body>
+</html>

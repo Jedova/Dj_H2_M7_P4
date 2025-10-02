@@ -17,11 +17,11 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
-from django.http import HttpResponse
-from inmuebles.views import solo_lectura_inmuebles  # <-- importa la vista protegida
+from django.shortcuts import render
+from inmuebles.views import solo_lectura_inmuebles
 
 def home(request):
-    return HttpResponse("<h1>Bienvenido</h1><p><a href='/admin/'>Admin</a> | <a href='/accounts/logout/'>Cerrar sesión</a></p>")
+    return render(request, "home.html")
 
 urlpatterns = [
     path("", home, name="home"),
@@ -29,7 +29,8 @@ urlpatterns = [
 
     path("accounts/", include("django.contrib.auth.urls")),
 
-    path("accounts/", include("accounts.urls")),
+    path("accounts/", include(("accounts.urls", "accounts"), namespace="accounts")),
 
     path("inmuebles/solo-lectura/", solo_lectura_inmuebles, name="inmuebles_solo_lectura"),
 ]
+
