@@ -12,10 +12,19 @@ def es_arrendador(user):
 
 
 def listar_inmuebles(request):
-    
-    qs = Inmueble.objects.filter(disponible=True).select_related("comuna", "comuna__region", "tipo").order_by(
-        "comuna__region__nombre", "comuna__nombre", "direccion"
-    )
+    qs = (Inmueble.objects
+          .filter(disponible=True)
+          .select_related("comuna", "comuna__region", "tipo")
+          .order_by("comuna__region__nombre", "comuna__nombre", "direccion"))
+
+    comuna_id = request.GET.get("comuna")
+    region_id = request.GET.get("region")
+
+    if comuna_id:
+        qs = qs.filter(comuna_id=comuna_id)
+    if region_id:
+        qs = qs.filter(comuna__region_id=region_id)
+
     return render(request, "inmuebles/listar.html", {"inmuebles": qs})
 
 
